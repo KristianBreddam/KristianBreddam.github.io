@@ -1,36 +1,14 @@
- AOS.init({
- 	duration: 800,
- 	easing: 'slide'
- });
+AOS.init({
+  duration: 600
+});
+  
 
 (function($) {
 
-	"use strict";
+	'use strict';
 
-	var isMobile = {
-		Android: function() {
-			return navigator.userAgent.match(/Android/i);
-		},
-			BlackBerry: function() {
-			return navigator.userAgent.match(/BlackBerry/i);
-		},
-			iOS: function() {
-			return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-		},
-			Opera: function() {
-			return navigator.userAgent.match(/Opera Mini/i);
-		},
-			Windows: function() {
-			return navigator.userAgent.match(/IEMobile/i);
-		},
-			any: function() {
-			return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-		}
-	};
-
-
-	$(window).stellar({
-    responsive: true,
+  $(window).stellar({
+    responsive: false,
     parallaxBackgrounds: true,
     parallaxElements: true,
     horizontalScrolling: false,
@@ -38,72 +16,135 @@
     scrollProperty: 'scroll'
   });
 
+	// bootstrap dropdown hover
 
-	var fullHeight = function() {
+  // loader
+  var loader = function() {
+    setTimeout(function() { 
+      if($('#loader').length > 0) {
+        $('#loader').removeClass('show');
+      }
+    }, 1);
+  };
+  loader();
 
-		$('.js-fullheight').css('height', $(window).height());
-		$(window).resize(function(){
-			$('.js-fullheight').css('height', $(window).height());
-		});
 
-	};
-	fullHeight();
+  // navigation
+  var OnePageNav = function() {
+    var navToggler = $('.js-site-nav-toggle');
+    $(".smoothscroll[href^='#'], #ftco-navbar ul li a[href^='#']").on('click', function(e) {
+      e.preventDefault();
+      var hash = this.hash;
+        
+      $('html, body').animate({
 
-	// loader
-	var loader = function() {
-		setTimeout(function() { 
-			if($('#ftco-loader').length > 0) {
-				$('#ftco-loader').removeClass('show');
-			}
-		}, 1);
-	};
-	loader();
+        scrollTop: $(hash).offset().top
+      }, 700, 'easeInOutExpo', function(){
+        window.location.hash = hash;
+      });
+    });
+    $("#ftco-navbar ul li a[href^='#']").on('click', function(e){
+      if ( navToggler.is(':visible') ) {
+        navToggler.click();
+      }
+    });
 
-	// Scrollax
-   $.Scrollax();
+    // $('body').on('activate.bs.scrollspy', function () {
+    //   console.log('nice');
+    // })
+  };
+  OnePageNav();
 
-	var carousel = function() {
-		$('.carousel-testimony').owlCarousel({
-			center: true,
-			loop: true,
-			items:1,
-			margin: 30,
-			stagePadding: 0,
-			nav: true,
-			navText: ['<span class="ion-ios-arrow-back">', '<span class="ion-ios-arrow-forward">'],
-			responsive:{
-				0:{
-					items: 1
-				},
-				600:{
-					items: 2
-				},
-				1000:{
-					items: 3
-				}
-			}
-		});
+  $(window).scroll(function() {
 
-	};
-	carousel();
+    var $this = $(this),
+      st = $this.scrollTop(),
+      navbar = $('.site-header');
 
+    if (st > 150) {
+      if ( !navbar.hasClass('scrolled') ) {
+        navbar.addClass('scrolled');  
+      }
+    } 
+    if (st < 150) {
+      if ( navbar.hasClass('scrolled') ) {
+        navbar.removeClass('scrolled sleep');
+      }
+    } 
+    if ( st > 350 ) {
+      if ( !navbar.hasClass('awake') ) {
+        navbar.addClass('awake'); 
+      }
+    }
+    if ( st < 350 ) {
+      if ( navbar.hasClass('awake') ) {
+        navbar.removeClass('awake');
+        navbar.addClass('sleep');
+      }
+    }
+
+  }); 
+
+
+  $('.js-site-nav-toggle').on('click', function(e) {
+
+    var $this = $(this);
+    e.preventDefault();
+
+ 
+
+    if ( $('body').hasClass('menu-open') ) {
+      $this.removeClass('active');
+        $('.site-menu .site-menu-inner > ul > li').each(function(i) {
+
+          var that = $(this);
+          setTimeout(function() {
+            that.removeClass('is-show');
+          }, i * 100);
+
+          // $(this).removeClass('is-show');
+        });
+      
+      setTimeout(function() {
+        // $('.site-menu').fadeOut(400);
+        $('.site-menu').removeClass('site-menu-show');
+      }, 800);
+
+      $('body').removeClass('menu-open');
+    } else {
+
+      // $('.site-menu').fadeIn(400);
+      $('.site-menu').addClass('site-menu-show');
+
+      $this.addClass('active');
+      $('body').addClass('menu-open');
+
+      setTimeout(function() {
+        $('.site-menu .site-menu-inner > ul > li').each(function(i) {
+          var that = $(this);
+          setTimeout(function() {
+            that.addClass('is-show');
+          }, i * 100);
+
+        });
+      }, 500);
+      
+    }
+
+  });
+
+
+	
 	$('nav .dropdown').hover(function(){
 		var $this = $(this);
-		// 	 timer;
-		// clearTimeout(timer);
 		$this.addClass('show');
 		$this.find('> a').attr('aria-expanded', true);
-		// $this.find('.dropdown-menu').addClass('animated-fast fadeInUp show');
 		$this.find('.dropdown-menu').addClass('show');
 	}, function(){
 		var $this = $(this);
-			// timer;
-		// timer = setTimeout(function(){
 			$this.removeClass('show');
 			$this.find('> a').attr('aria-expanded', false);
-			// $this.find('.dropdown-menu').removeClass('animated-fast fadeInUp show');
 			$this.find('.dropdown-menu').removeClass('show');
-		// }, 100);
 	});
 
 
@@ -111,187 +152,276 @@
 	  console.log('show');
 	});
 
-	// scroll
-	var scrollWindow = function() {
-		$(window).scroll(function(){
-			var $w = $(this),
-					st = $w.scrollTop(),
-					navbar = $('.ftco_navbar'),
-					sd = $('.js-scroll-wrap');
+	// home slider
+	$('.home-slider').owlCarousel({
+    loop:true,
+    autoplay: true,
+    margin:0,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
+    nav:true,
+    autoplayHoverPause: true,
+    items: 1,
+    navText : ["<span class='ion-chevron-left'></span>","<span class='ion-chevron-right'></span>"],
+    responsive:{
+      0:{
+        items:1,
+        nav:false
+      },
+      600:{
+        items:1,
+        nav:false
+      },
+      1000:{
+        items:1,
+        nav:true
+      }
+    }
+	});
 
-			if (st > 150) {
-				if ( !navbar.hasClass('scrolled') ) {
-					navbar.addClass('scrolled');	
-				}
-			} 
-			if (st < 150) {
-				if ( navbar.hasClass('scrolled') ) {
-					navbar.removeClass('scrolled sleep');
-				}
-			} 
-			if ( st > 350 ) {
-				if ( !navbar.hasClass('awake') ) {
-					navbar.addClass('awake');	
-				}
-				
-				if(sd.length > 0) {
-					sd.addClass('sleep');
-				}
-			}
-			if ( st < 350 ) {
-				if ( navbar.hasClass('awake') ) {
-					navbar.removeClass('awake');
-					navbar.addClass('sleep');
-				}
-				if(sd.length > 0) {
-					sd.removeClass('sleep');
-				}
-			}
-		});
-	};
-	scrollWindow();
-
-	var isMobile = {
-		Android: function() {
-			return navigator.userAgent.match(/Android/i);
-		},
-			BlackBerry: function() {
-			return navigator.userAgent.match(/BlackBerry/i);
-		},
-			iOS: function() {
-			return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-		},
-			Opera: function() {
-			return navigator.userAgent.match(/Opera Mini/i);
-		},
-			Windows: function() {
-			return navigator.userAgent.match(/IEMobile/i);
-		},
-			any: function() {
-			return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-		}
-	};
-
-	
-	var counter = function() {
-		
-		$('#section-counter').waypoint( function( direction ) {
-
-			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
-
-				var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(',')
-				$('.number').each(function(){
-					var $this = $(this),
-						num = $this.data('number');
-						console.log(num);
-					$this.animateNumber(
-					  {
-					    number: num,
-					    numberStep: comma_separator_number_step
-					  }, 7000
-					);
-				});
-				
-			}
-
-		} , { offset: '95%' } );
-
-	}
-	counter();
-
-	var contentWayPoint = function() {
-		var i = 0;
-		$('.ftco-animate').waypoint( function( direction ) {
-
-			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
-				
-				i++;
-
-				$(this.element).addClass('item-animate');
-				setTimeout(function(){
-
-					$('body .ftco-animate.item-animate').each(function(k){
-						var el = $(this);
-						setTimeout( function () {
-							var effect = el.data('animate-effect');
-							if ( effect === 'fadeIn') {
-								el.addClass('fadeIn ftco-animated');
-							} else if ( effect === 'fadeInLeft') {
-								el.addClass('fadeInLeft ftco-animated');
-							} else if ( effect === 'fadeInRight') {
-								el.addClass('fadeInRight ftco-animated');
-							} else {
-								el.addClass('fadeInUp ftco-animated');
-							}
-							el.removeClass('item-animate');
-						},  k * 50, 'easeInOutExpo' );
-					});
-					
-				}, 100);
-				
-			}
-
-		} , { offset: '95%' } );
-	};
-	contentWayPoint();
-
-
-	// navigation
-	var OnePageNav = function() {
-		$(".smoothscroll[href^='#'], #ftco-nav ul li a[href^='#']").on('click', function(e) {
-		 	e.preventDefault();
-
-		 	var hash = this.hash,
-		 			navToggler = $('.navbar-toggler');
-		 	$('html, body').animate({
-		    scrollTop: $(hash).offset().top
-		  }, 700, 'easeInOutExpo', function(){
-		    window.location.hash = hash;
-		  });
-
-
-		  if ( navToggler.is(':visible') ) {
-		  	navToggler.click();
-		  }
-		});
-		$('body').on('activate.bs.scrollspy', function () {
-		  console.log('nice');
-		})
-	};
-	OnePageNav();
-
-
-	// magnific popup
-	$('.image-popup').magnificPopup({
-    type: 'image',
-    closeOnContentClick: true,
-    closeBtnInside: false,
-    fixedContentPos: true,
-    mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
-     gallery: {
-      enabled: true,
-      navigateByImgClick: true,
-      preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-    },
-    image: {
-      verticalFit: true
-    },
-    zoom: {
-      enabled: true,
-      duration: 300 // don't foget to change the duration also in CSS
+  $('.home-slider-loop-false').owlCarousel({
+    loop:false,
+    autoplay: true,
+    margin:0,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
+    nav:true,
+    autoplayHoverPause: true,
+    items: 1,
+    navText : ["<span class='ion-chevron-left'></span>","<span class='ion-chevron-right'></span>"],
+    responsive:{
+      0:{
+        items:1,
+        nav:false
+      },
+      600:{
+        items:1,
+        nav:false
+      },
+      1000:{
+        items:1,
+        nav:true
+      }
     }
   });
 
-  $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-    disableOn: 700,
-    type: 'iframe',
-    mainClass: 'mfp-fade',
-    removalDelay: 160,
-    preloader: false,
+	// owl carousel
+	var majorCarousel = $('.js-carousel-1');
+	majorCarousel.owlCarousel({
+    loop:true,
+    autoplay: true,
+    stagePadding: 7,
+    margin: 20,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
+    nav: true,
+    autoplayHoverPause: true,
+    items: 3,
+    navText : ["<span class='ion-chevron-left'></span>","<span class='ion-chevron-right'></span>"],
+    responsive:{
+      0:{
+        items:1,
+        nav:false
+      },
+      600:{
+        items:2,
+        nav:false
+      },
+      1000:{
+        items:3,
+        nav:true,
+        loop:false
+      }
+  	}
+	});
 
-    fixedContentPos: false
+	// owl carousel
+	var major2Carousel = $('.js-carousel-2');
+	major2Carousel.owlCarousel({
+    loop:true,
+    autoplay: true,
+    stagePadding: 7,
+    margin: 20,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
+    nav: true,
+    autoplayHoverPause: true,
+    items: 4,
+    navText : ["<span class='ion-chevron-left'></span>","<span class='ion-chevron-right'></span>"],
+    responsive:{
+      0:{
+        items:1,
+        nav:false
+      },
+      600:{
+        items:3,
+        nav:false
+      },
+      1000:{
+        items:4,
+        nav:true,
+        loop:false
+      }
+  	}
+	});
+
+
+  $('.centernonloop').owlCarousel({
+    center: true,
+    items: 1,
+    loop: false,
+    margin:10,
+    dots: true,
+    responsive:{
+      600:{
+        items: 3
+      }
+    }
   });
+
+  $('#date').datepicker({
+    'format': 'm/d/yyyy',
+    'autoclose': true
+  });
+  $('#time').timepicker();
+
+
+  //------- Google Map  js --------//  
+
+    if (document.getElementById("map")) {
+        google.maps.event.addDomListener(window, 'load', init);
+
+        function init() {
+            var mapOptions = {
+                zoom: 11,
+                center: new google.maps.LatLng(40.6700, -73.9400), // New York
+                styles: [{
+                    "featureType": "water",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#e9e9e9"
+                    }, {
+                        "lightness": 17
+                    }]
+                }, {
+                    "featureType": "landscape",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#f5f5f5"
+                    }, {
+                        "lightness": 20
+                    }]
+                }, {
+                    "featureType": "road.highway",
+                    "elementType": "geometry.fill",
+                    "stylers": [{
+                        "color": "#ffffff"
+                    }, {
+                        "lightness": 17
+                    }]
+                }, {
+                    "featureType": "road.highway",
+                    "elementType": "geometry.stroke",
+                    "stylers": [{
+                        "color": "#ffffff"
+                    }, {
+                        "lightness": 29
+                    }, {
+                        "weight": 0.2
+                    }]
+                }, {
+                    "featureType": "road.arterial",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#ffffff"
+                    }, {
+                        "lightness": 18
+                    }]
+                }, {
+                    "featureType": "road.local",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#ffffff"
+                    }, {
+                        "lightness": 16
+                    }]
+                }, {
+                    "featureType": "poi",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#f5f5f5"
+                    }, {
+                        "lightness": 21
+                    }]
+                }, {
+                    "featureType": "poi.park",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#dedede"
+                    }, {
+                        "lightness": 21
+                    }]
+                }, {
+                    "elementType": "labels.text.stroke",
+                    "stylers": [{
+                        "visibility": "on"
+                    }, {
+                        "color": "#ffffff"
+                    }, {
+                        "lightness": 16
+                    }]
+                }, {
+                    "elementType": "labels.text.fill",
+                    "stylers": [{
+                        "saturation": 36
+                    }, {
+                        "color": "#333333"
+                    }, {
+                        "lightness": 40
+                    }]
+                }, {
+                    "elementType": "labels.icon",
+                    "stylers": [{
+                        "visibility": "off"
+                    }]
+                }, {
+                    "featureType": "transit",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#f2f2f2"
+                    }, {
+                        "lightness": 19
+                    }]
+                }, {
+                    "featureType": "administrative",
+                    "elementType": "geometry.fill",
+                    "stylers": [{
+                        "color": "#fefefe"
+                    }, {
+                        "lightness": 20
+                    }]
+                }, {
+                    "featureType": "administrative",
+                    "elementType": "geometry.stroke",
+                    "stylers": [{
+                        "color": "#fefefe"
+                    }, {
+                        "lightness": 17
+                    }, {
+                        "weight": 1.2
+                    }]
+                }]
+            };
+            var mapElement = document.getElementById('map');
+            var map = new google.maps.Map(mapElement, mapOptions);
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(40.6700, -73.9400),
+                map: map,
+                title: 'Snazzy!'
+            });
+        }
+    }
+
 
 
 })(jQuery);
-

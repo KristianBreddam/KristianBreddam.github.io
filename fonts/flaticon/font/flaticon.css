@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 11/07/2018 10:34
+  	Creation date: 14/05/2018 00:51
   	*/
 
 @font-face {
@@ -24,20 +24,15 @@
 [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
 [class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
   font-family: Flaticon;
-        font-size: 20px;
-font-style: normal;
-margin-left: 20px;
+  font-style: normal;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
 }
 
-.flaticon-woman:before { content: "\f100"; }
-.flaticon-tray:before { content: "\f101"; }
-.flaticon-disco-ball:before { content: "\f102"; }
-.flaticon-beer:before { content: "\f103"; }
-.flaticon-cheers:before { content: "\f104"; }
-.flaticon-receptionist:before { content: "\f105"; }
-.flaticon-spa:before { content: "\f106"; }
-.flaticon-wifi-router:before { content: "\f107"; }
-.flaticon-deck-chair:before { content: "\f108"; }
-.flaticon-bed:before { content: "\f109"; }
-.flaticon-resort:before { content: "\f10a"; }
-.flaticon-bathtub:before { content: "\f10b"; }
+.flaticon-chicken:before { content: "\f100"; }
+.flaticon-pancake:before { content: "\f101"; }
+.flaticon-salad:before { content: "\f102"; }
+.flaticon-soup:before { content: "\f103"; }
+.flaticon-vegetables:before { content: "\f104"; }
+.flaticon-tray:before { content: "\f105"; }
