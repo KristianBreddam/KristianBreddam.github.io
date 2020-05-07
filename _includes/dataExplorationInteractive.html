@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.0.2.min.js" integrity="sha384-ufR9RFnRs6lniiaFvtJziE0YeidtAgBRH6ux2oUItHw5WTvE1zuk9uzhUU/FJXDp" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="008e0445-c8c9-4b4c-9f58-2b4d49c42971" data-root-id="3614"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="3974">
+          {"87e13d3d-b7ac-4f83-99ba-8bf7f52150ce":{"roots":{"references":[{"attributes":{"data_source":{"id":"3650"},"glyph":{"id":"3652"},"hover_glyph":null,"muted_glyph":{"id":"3654"},"nonselection_glyph":{"id":"3653"},"selection_glyph":null,"view":{"id":"3656"}},"id":"3655","type":"GlyphRenderer"},{"attributes":{"callback":null,"renderers":[{"id":"3662"}],"tooltips":[["Trees","@trees (@Trees{0.0}%)"]]},"id":"3672","type":"HoverTool"},{"attributes":{"axis":{"id":"3622"},"grid_line_color":null,"ticker":null},"id":"3624","type":"Grid"},{"attributes":{"source":{"id":"3643"}},"id":"3649","type":"CDSView"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#66c2a4"},"line_alpha":{"value":0.1},"line_color":{"value":"#66c2a4"},"top":{"field":"Area"},"width":{"value":0.8},"x":{"field":"district"}},"id":"3653","type":"VBar"},{"attributes":{"formatter":{"id":"3679"},"ticker":{"id":"3626"},"visible":false},"id":"3625","type":"LinearAxis"},{"attributes":{},"id":"3620","type":"LinearScale"},{"attributes":{"callback":null,"renderers":[{"id":"3655"}],"tooltips":[["Area","@area{0.0} km\u00b2 (@Area{0.0}%)"]]},"id":"3670","type":"HoverTool"},{"attributes":{},"id":"3623","type":"CategoricalTicker"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#b2e2e2"},"line_alpha":{"value":0.1},"line_color":{"value":"#b2e2e2"},"top":{"field":"Trees"},"width":{"value":0.8},"x":{"field":"district"}},"id":"3660","type":"VBar"},{"attributes":{},"id":"3626","type":"BasicTicker"},{"attributes":{"fill_color":{"value":"#66c2a4"},"line_color":{"value":"#66c2a4"},"top":{"field":"Area"},"width":{"value":0.8},"x":{"field":"district"}},"id":"3652","type":"VBar"},{"attributes":{"label":{"value":"Population"},"renderers":[{"id":"3648"}]},"id":"3665","type":"LegendItem"},{"attributes":{},"id":"3618","type":"CategoricalScale"},{"attributes":{"end":25},"id":"3613","type":"Range1d"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#2ca25f"},"line_alpha":{"value":0.1},"line_color":{"value":"#2ca25f"},"top":{"field":"Population"},"width":{"value":0.8},"x":{"field":"district"}},"id":"3646","type":"VBar"},{"attributes":{"source":{"id":"3650"}},"id":"3656","type":"CDSView"},{"attributes":{"data_source":{"id":"3643"},"glyph":{"id":"3645"},"hover_glyph":null,"muted_glyph":{"id":"3647"},"nonselection_glyph":{"id":"3646"},"selection_glyph":null,"view":{"id":"3649"}},"id":"3648","type":"GlyphRenderer"},{"attributes":{"fill_color":{"value":"#b2e2e2"},"line_color":{"value":"#b2e2e2"},"top":{"field":"Trees"},"width":{"value":0.8},"x":{"field":"district"}},"id":"3659","type":"VBar"},{"attributes":{"axis":{"id":"3625"},"dimension":1,"grid_line_color":null,"ticker":null},"id":"3628","type":"Grid"},{"attributes":{"text":""},"id":"3675","type":"Title"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"#2ca25f"},"line_alpha":{"value":0},"line_color":{"value":"#2ca25f"},"top":{"field":"Population"},"width":{"value":0.8},"x":{"field":"district"}},"id":"3647","type":"VBar"},{"attributes":{"data":{"Area":{"__ndarray__":"ZmZmZmZmNUAzMzMzMzMkQGZmZmZmZh5AZmZmZmZmI0AAAAAAAAAkQGZmZmZmZhJAmpmZmZmZJEAAAAAAAAAeQDMzMzMzMyJAZmZmZmZmI0A=","dtype":"float64","shape":[10]},"Population":{"__ndarray__":"MzMzMzMzKUAAAAAAAAAjQJqZmZmZmSFAZmZmZmZmHEDNzMzMzMwhQJqZmZmZmSlAMzMzMzMzI0BmZmZmZmYaQDMzMzMzMydAZmZmZmZmKUA=","dtype":"float64","shape":[10]},"Trees":{"__ndarray__":"mpmZmZmZH0CamZmZmZkbQAAAAAAAAC1AMzMzMzMzHUBmZmZmZmYlQM3MzMzMzCdAMzMzMzMzIUCamZmZmZkbQGZmZmZmZidAZmZmZmZmK0A=","dtype":"float64","shape":[10]},"area":{"__ndarray__":"MzMzMzMzM0AzMzMzMzMiQDMzMzMzMxtAZmZmZmZmIUAAAAAAAAAiQGZmZmZmZhBAZmZmZmZmIkDNzMzMzMwaQGZmZmZmZiBAZmZmZmZmIUA=","dtype":"float64","shape":[10]},"areaRatio":{"__ndarray__":"q6qqqqolbUDf4z3e4/16QIiHh4eH/5JAWe5phOXefUCrqqqqqjKFQGVwPgbny5lA3/SmN72RgECwxkR6oEKCQJ2PwfkYdIlAeYFMihcIjEA=","dtype":"float64","shape":[10]},"district":["Amager Vest","Amager \u00d8st","Bispebjerg","Br\u00f8nsh\u00f8j-Husum","Indre By","N\u00f8rrebro","Valby","Vanl\u00f8se","Vesterbro","\u00d8sterbro"],"income":[229,217,182,213,286,187,217,234,219,247],"incomeRatio":{"__ndarray__":"zZXyG9uMM0BBcaA4UBwyQG7btm3btkZArbA5kGiFM0CKndiJnVg1QJmwDYJTGUJAxOph9bB6NkCxEzuxE7swQPeX2l9qfz5AhrnbNFuYP0A=","dtype":"float64","shape":[10]},"index":[9,8,7,6,0,2,4,5,3,1],"popRatio":{"__ndarray__":"/NX0g4EGrT8EJBmdv9KwPyEYbECRLsM/yVSvrbvEtz/REYg1u/m7PzVl+Fedl7U/fhLTnd20tD/3Mcg7RFS4P/Drmw/Vhbc/TO48itEIuT8=","dtype":"float64","shape":[10]},"population":[78973,59803,55172,44784,55866,80254,60308,41195,72688,79803],"trees":[4477,3930,8268,4158,6105,6769,4878,3915,6679,7804]},"selected":{"id":"3681"},"selection_policy":{"id":"3680"}},"id":"3643","type":"ColumnDataSource"},{"attributes":{"data":{"Area":{"__ndarray__":"ZmZmZmZmNUAzMzMzMzMkQGZmZmZmZh5AZmZmZmZmI0AAAAAAAAAkQGZmZmZmZhJAmpmZmZmZJEAAAAAAAAAeQDMzMzMzMyJAZmZmZmZmI0A=","dtype":"float64","shape":[10]},"Population":{"__ndarray__":"MzMzMzMzKUAAAAAAAAAjQJqZmZmZmSFAZmZmZmZmHEDNzMzMzMwhQJqZmZmZmSlAMzMzMzMzI0BmZmZmZmYaQDMzMzMzMydAZmZmZmZmKUA=","dtype":"float64","shape":[10]},"Trees":{"__ndarray__":"mpmZmZmZH0CamZmZmZkbQAAAAAAAAC1AMzMzMzMzHUBmZmZmZmYlQM3MzMzMzCdAMzMzMzMzIUCamZmZmZkbQGZmZmZmZidAZmZmZmZmK0A=","dtype":"float64","shape":[10]},"area":{"__ndarray__":"MzMzMzMzM0AzMzMzMzMiQDMzMzMzMxtAZmZmZmZmIUAAAAAAAAAiQGZmZmZmZhBAZmZmZmZmIkDNzMzMzMwaQGZmZmZmZiBAZmZmZmZmIUA=","dtype":"float64","shape":[10]},"areaRatio":{"__ndarray__":"q6qqqqolbUDf4z3e4/16QIiHh4eH/5JAWe5phOXefUCrqqqqqjKFQGVwPgbny5lA3/SmN72RgECwxkR6oEKCQJ2PwfkYdIlAeYFMihcIjEA=","dtype":"float64","shape":[10]},"district":["Amager Vest","Amager \u00d8st","Bispebjerg","Br\u00f8nsh\u00f8j-Husum","Indre By","N\u00f8rrebro","Valby","Vanl\u00f8se","Vesterbro","\u00d8sterbro"],"income":[229,217,182,213,286,187,217,234,219,247],"incomeRatio":{"__ndarray__":"zZXyG9uMM0BBcaA4UBwyQG7btm3btkZArbA5kGiFM0CKndiJnVg1QJmwDYJTGUJAxOph9bB6NkCxEzuxE7swQPeX2l9qfz5AhrnbNFuYP0A=","dtype":"float64","shape":[10]},"index":[9,8,7,6,0,2,4,5,3,1],"popRatio":{"__ndarray__":"/NX0g4EGrT8EJBmdv9KwPyEYbECRLsM/yVSvrbvEtz/REYg1u/m7PzVl+Fedl7U/fhLTnd20tD/3Mcg7RFS4P/Drmw/Vhbc/TO48itEIuT8=","dtype":"float64","shape":[10]},"population":[78973,59803,55172,44784,55866,80254,60308,41195,72688,79803],"trees":[4477,3930,8268,4158,6105,6769,4878,3915,6679,7804]},"selected":{"id":"3685"},"selection_policy":{"id":"3684"}},"id":"3657","type":"ColumnDataSource"},{"attributes":{"factors":["Amager Vest","Amager \u00d8st","Bispebjerg","Br\u00f8nsh\u00f8j-Husum","Indre By","N\u00f8rrebro","Valby","Vanl\u00f8se","Vesterbro","\u00d8sterbro"]},"id":"3615","type":"FactorRange"},{"attributes":{"label":{"value":"Trees"},"renderers":[{"id":"3662"}]},"id":"3667","type":"LegendItem"},{"attributes":{},"id":"3629","type":"PanTool"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"#66c2a4"},"line_alpha":{"value":0},"line_color":{"value":"#66c2a4"},"top":{"field":"Area"},"width":{"value":0.8},"x":{"field":"district"}},"id":"3654","type":"VBar"},{"attributes":{},"id":"3683","type":"Selection"},{"attributes":{},"id":"3682","type":"UnionRenderers"},{"attributes":{"formatter":{"id":"3677"},"major_label_orientation":0.5,"ticker":{"id":"3623"}},"id":"3622","type":"CategoricalAxis"},{"attributes":{"label":{"value":"Area"},"renderers":[{"id":"3655"}]},"id":"3666","type":"LegendItem"},{"attributes":{},"id":"3681","type":"Selection"},{"attributes":{"bottom_units":"screen","fill_alpha":0.5,"fill_color":"lightgrey","left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"3635","type":"BoxAnnotation"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"3629"},{"id":"3630"},{"id":"3631"},{"id":"3632"},{"id":"3633"},{"id":"3634"},{"id":"3668"},{"id":"3670"},{"id":"3672"}]},"id":"3636","type":"Toolbar"},{"attributes":{"overlay":{"id":"3635"}},"id":"3631","type":"BoxZoomTool"},{"attributes":{"callback":null,"renderers":[{"id":"3648"}],"tooltips":[["Population","@population (@Population{0.0}%)"]]},"id":"3668","type":"HoverTool"},{"attributes":{},"id":"3680","type":"UnionRenderers"},{"attributes":{},"id":"3632","type":"SaveTool"},{"attributes":{},"id":"3633","type":"ResetTool"},{"attributes":{},"id":"3684","type":"UnionRenderers"},{"attributes":{},"id":"3679","type":"BasicTickFormatter"},{"attributes":{"fill_color":{"value":"#2ca25f"},"line_color":{"value":"#2ca25f"},"top":{"field":"Population"},"width":{"value":0.8},"x":{"field":"district"}},"id":"3645","type":"VBar"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"#b2e2e2"},"line_alpha":{"value":0},"line_color":{"value":"#b2e2e2"},"top":{"field":"Trees"},"width":{"value":0.8},"x":{"field":"district"}},"id":"3661","type":"VBar"},{"attributes":{},"id":"3630","type":"WheelZoomTool"},{"attributes":{"click_policy":"hide","items":[{"id":"3665"},{"id":"3666"},{"id":"3667"}],"location":[0,50]},"id":"3664","type":"Legend"},{"attributes":{"data":{"Area":{"__ndarray__":"ZmZmZmZmNUAzMzMzMzMkQGZmZmZmZh5AZmZmZmZmI0AAAAAAAAAkQGZmZmZmZhJAmpmZmZmZJEAAAAAAAAAeQDMzMzMzMyJAZmZmZmZmI0A=","dtype":"float64","shape":[10]},"Population":{"__ndarray__":"MzMzMzMzKUAAAAAAAAAjQJqZmZmZmSFAZmZmZmZmHEDNzMzMzMwhQJqZmZmZmSlAMzMzMzMzI0BmZmZmZmYaQDMzMzMzMydAZmZmZmZmKUA=","dtype":"float64","shape":[10]},"Trees":{"__ndarray__":"mpmZmZmZH0CamZmZmZkbQAAAAAAAAC1AMzMzMzMzHUBmZmZmZmYlQM3MzMzMzCdAMzMzMzMzIUCamZmZmZkbQGZmZmZmZidAZmZmZmZmK0A=","dtype":"float64","shape":[10]},"area":{"__ndarray__":"MzMzMzMzM0AzMzMzMzMiQDMzMzMzMxtAZmZmZmZmIUAAAAAAAAAiQGZmZmZmZhBAZmZmZmZmIkDNzMzMzMwaQGZmZmZmZiBAZmZmZmZmIUA=","dtype":"float64","shape":[10]},"areaRatio":{"__ndarray__":"q6qqqqolbUDf4z3e4/16QIiHh4eH/5JAWe5phOXefUCrqqqqqjKFQGVwPgbny5lA3/SmN72RgECwxkR6oEKCQJ2PwfkYdIlAeYFMihcIjEA=","dtype":"float64","shape":[10]},"district":["Amager Vest","Amager \u00d8st","Bispebjerg","Br\u00f8nsh\u00f8j-Husum","Indre By","N\u00f8rrebro","Valby","Vanl\u00f8se","Vesterbro","\u00d8sterbro"],"income":[229,217,182,213,286,187,217,234,219,247],"incomeRatio":{"__ndarray__":"zZXyG9uMM0BBcaA4UBwyQG7btm3btkZArbA5kGiFM0CKndiJnVg1QJmwDYJTGUJAxOph9bB6NkCxEzuxE7swQPeX2l9qfz5AhrnbNFuYP0A=","dtype":"float64","shape":[10]},"index":[9,8,7,6,0,2,4,5,3,1],"popRatio":{"__ndarray__":"/NX0g4EGrT8EJBmdv9KwPyEYbECRLsM/yVSvrbvEtz/REYg1u/m7PzVl+Fedl7U/fhLTnd20tD/3Mcg7RFS4P/Drmw/Vhbc/TO48itEIuT8=","dtype":"float64","shape":[10]},"population":[78973,59803,55172,44784,55866,80254,60308,41195,72688,79803],"trees":[4477,3930,8268,4158,6105,6769,4878,3915,6679,7804]},"selected":{"id":"3683"},"selection_policy":{"id":"3682"}},"id":"3650","type":"ColumnDataSource"},{"attributes":{"source":{"id":"3657"}},"id":"3663","type":"CDSView"},{"attributes":{},"id":"3634","type":"HelpTool"},{"attributes":{"data_source":{"id":"3657"},"glyph":{"id":"3659"},"hover_glyph":null,"muted_glyph":{"id":"3661"},"nonselection_glyph":{"id":"3660"},"selection_glyph":null,"view":{"id":"3663"}},"id":"3662","type":"GlyphRenderer"},{"attributes":{},"id":"3685","type":"Selection"},{"attributes":{},"id":"3677","type":"CategoricalTickFormatter"},{"attributes":{"below":[{"id":"3622"}],"center":[{"id":"3624"},{"id":"3628"}],"left":[{"id":"3625"},{"id":"3664"}],"outline_line_color":null,"plot_height":300,"plot_width":700,"renderers":[{"id":"3648"},{"id":"3655"},{"id":"3662"}],"title":{"id":"3675"},"toolbar":{"id":"3636"},"toolbar_location":null,"x_range":{"id":"3615"},"x_scale":{"id":"3618"},"y_range":{"id":"3613"},"y_scale":{"id":"3620"}},"id":"3614","subtype":"Figure","type":"Plot"}],"root_ids":["3614"]},"title":"Bokeh Application","version":"2.0.2"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('3974').textContent;
+                  var render_items = [{"docid":"87e13d3d-b7ac-4f83-99ba-8bf7f52150ce","root_ids":["3614"],"roots":{"3614":"008e0445-c8c9-4b4c-9f58-2b4d49c42971"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>
