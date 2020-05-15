@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.0.2.min.js" integrity="sha384-ufR9RFnRs6lniiaFvtJziE0YeidtAgBRH6ux2oUItHw5WTvE1zuk9uzhUU/FJXDp" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="bedb957c-e57d-4ef3-902f-c915efea5763" data-root-id="8784"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="10688">
+          {"25c7c800-c6c4-4e94-8823-ce1a91746424":{"roots":{"references":[{"attributes":{"below":[{"id":"8794"}],"center":[{"id":"8796"},{"id":"8800"}],"left":[{"id":"8797"}],"min_border_left":30,"outline_line_color":null,"plot_height":300,"plot_width":500,"renderers":[{"id":"8819"}],"title":{"id":"8785"},"toolbar":{"id":"8808"},"toolbar_location":null,"x_range":{"id":"8787"},"x_scale":{"id":"8790"},"y_range":{"id":"8783"},"y_scale":{"id":"8792"}},"id":"8784","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"8798","type":"BasicTicker"},{"attributes":{"fill_color":{"value":"#578300"},"line_color":{"value":"#578300"},"top":{"field":"squaremeter_priceRatio"},"width":{"value":0.9},"x":{"field":"district"}},"id":"8817","type":"VBar"},{"attributes":{"axis":{"id":"8797"},"dimension":1,"grid_line_color":null,"ticker":null},"id":"8800","type":"Grid"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#578300"},"line_alpha":{"value":0.1},"line_color":{"value":"#578300"},"top":{"field":"squaremeter_priceRatio"},"width":{"value":0.9},"x":{"field":"district"}},"id":"8818","type":"VBar"},{"attributes":{"source":{"id":"8815"}},"id":"8820","type":"CDSView"},{"attributes":{},"id":"9750","type":"Selection"},{"attributes":{},"id":"8801","type":"PanTool"},{"attributes":{"end":300},"id":"8783","type":"Range1d"},{"attributes":{},"id":"9751","type":"UnionRenderers"},{"attributes":{},"id":"8802","type":"WheelZoomTool"},{"attributes":{"overlay":{"id":"8807"}},"id":"8803","type":"BoxZoomTool"},{"attributes":{},"id":"8804","type":"SaveTool"},{"attributes":{},"id":"8805","type":"ResetTool"},{"attributes":{"callback":null,"tooltips":[["Trees per 1000DKK m\u00b2","@squaremeter_priceRatio{0.0}"]]},"id":"8821","type":"HoverTool"},{"attributes":{},"id":"8806","type":"HelpTool"},{"attributes":{"text":"Trees per 1000DKK m\u00b2"},"id":"8785","type":"Title"},{"attributes":{"factors":["Amager Vest","Amager \u00d8st","Bispebjerg","Br\u00f8nsh\u00f8j-Husum","Indre By","N\u00f8rrebro","Valby","Vanl\u00f8se","Vesterbro","\u00d8sterbro"]},"id":"8787","type":"FactorRange"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"8801"},{"id":"8802"},{"id":"8803"},{"id":"8804"},{"id":"8805"},{"id":"8806"},{"id":"8821"}]},"id":"8808","type":"Toolbar"},{"attributes":{},"id":"9748","type":"BasicTickFormatter"},{"attributes":{},"id":"8790","type":"CategoricalScale"},{"attributes":{"bottom_units":"screen","fill_alpha":0.5,"fill_color":"lightgrey","left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"8807","type":"BoxAnnotation"},{"attributes":{},"id":"8792","type":"LinearScale"},{"attributes":{"data":{"Area":{"__ndarray__":"ZmZmZmZmNUAzMzMzMzMkQGZmZmZmZh5AZmZmZmZmI0AAAAAAAAAkQGZmZmZmZhJAmpmZmZmZJEAAAAAAAAAeQDMzMzMzMyJAZmZmZmZmI0A=","dtype":"float64","shape":[10]},"Population":{"__ndarray__":"MzMzMzMzKUAAAAAAAAAjQJqZmZmZmSFAZmZmZmZmHEDNzMzMzMwhQJqZmZmZmSlAMzMzMzMzI0BmZmZmZmYaQDMzMzMzMydAZmZmZmZmKUA=","dtype":"float64","shape":[10]},"Squaremeter price":{"__ndarray__":"zczMzMzMI0DNzMzMzMwjQDMzMzMzMyFAMzMzMzMzH0AAAAAAAAAqQAAAAAAAACZAmpmZmZmZIUBmZmZmZmYhQJqZmZmZmSVAAAAAAAAAJ0A=","dtype":"float64","shape":[10]},"Trees":{"__ndarray__":"MzMzMzMzH0CamZmZmZkbQAAAAAAAAC1AMzMzMzMzHUBmZmZmZmYlQM3MzMzMzCdAMzMzMzMzIUCamZmZmZkbQJqZmZmZmSdAZmZmZmZmK0A=","dtype":"float64","shape":[10]},"area":{"__ndarray__":"MzMzMzMzM0AzMzMzMzMiQDMzMzMzMxtAZmZmZmZmIUAAAAAAAAAiQGZmZmZmZhBAZmZmZmZmIkDNzMzMzMwaQGZmZmZmZiBAZmZmZmZmIUA=","dtype":"float64","shape":[10]},"areaRatio":{"__ndarray__":"q6qqqqolbUDf4z3e4/16QIiHh4eH/5JAXyCT4gXSfUCrqqqqqjKFQH4MzsfgzJlA3/SmN72RgECwxkR6oEKCQKN2JWpXkolAkUnxApkkjEA=","dtype":"float64","shape":[10]},"district":["Amager Vest","Amager \u00d8st","Bispebjerg","Br\u00f8nsh\u00f8j-Husum","Indre By","N\u00f8rrebro","Valby","Vanl\u00f8se","Vesterbro","\u00d8sterbro"],"index":[9,8,7,6,0,2,4,5,3,1],"popRatio":{"__ndarray__":"LUcXLxWtFkBGSHdlS0kaQLTlqPTC+C1A7PJg5LGJIkDrTdJBGtslQK3kBD8W3yBAcuZMI00tIEAJZ7RO1QEjQG9xnWpkdiJAFB/4R8eiI0A=","dtype":"float64","shape":[10]},"population":[78973,59803,55172,44784,55866,80254,60308,41195,72688,79803],"squaremeter_price":{"__ndarray__":"AAAAAMCo4kAAAAAAwKjiQAAAAABAUuBAAAAAAIBT3UAAAAAAgJroQAAAAABg4eRAAAAAAKCP4EAAAAAAwHvgQAAAAABgfORAAAAAAODY5UA=","dtype":"float64","shape":[10]},"squaremeter_priceRatio":{"__ndarray__":"fv0IK/xJXUAt2kyI4bVZQD2xZYlG625AjAmwXU9HYUAcVZQpOkpeQANe+NAPymNAyGzEOEv6YUA0RIGbPf5cQDHQ6Efd/WNApqOK347jZUA=","dtype":"float64","shape":[10]},"trees":[4477,3930,8268,4151,6105,6770,4878,3915,6710,7835]},"selected":{"id":"9750"},"selection_policy":{"id":"9751"}},"id":"8815","type":"ColumnDataSource"},{"attributes":{"formatter":{"id":"9746"},"major_label_orientation":0.5,"ticker":{"id":"8795"}},"id":"8794","type":"CategoricalAxis"},{"attributes":{"data_source":{"id":"8815"},"glyph":{"id":"8817"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"8818"},"selection_glyph":null,"view":{"id":"8820"}},"id":"8819","type":"GlyphRenderer"},{"attributes":{},"id":"8795","type":"CategoricalTicker"},{"attributes":{},"id":"9746","type":"CategoricalTickFormatter"},{"attributes":{"axis":{"id":"8794"},"grid_line_color":null,"ticker":null},"id":"8796","type":"Grid"},{"attributes":{"formatter":{"id":"9748"},"ticker":{"id":"8798"},"visible":false},"id":"8797","type":"LinearAxis"}],"root_ids":["8784"]},"title":"Bokeh Application","version":"2.0.2"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('10688').textContent;
+                  var render_items = [{"docid":"25c7c800-c6c4-4e94-8823-ce1a91746424","root_ids":["8784"],"roots":{"8784":"bedb957c-e57d-4ef3-902f-c915efea5763"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>
